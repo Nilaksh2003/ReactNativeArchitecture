@@ -1,6 +1,6 @@
 import {createStore, applyMiddleware} from 'redux';
 import {persistStore, persistReducer} from 'redux-persist';
-import thunk from 'redux-thunk'; // Middleware for async actions
+import {thunk} from 'redux-thunk'; // Middleware for async actions
 import {rootReducer} from '@/reducers'; // Import combined reducers
 import {storage} from '@/storage';
 
@@ -12,6 +12,6 @@ const persistConfig = {
 
 export const store = createStore(
   persistReducer(persistConfig, rootReducer),
- /*  applyMiddleware(thunk), */
+  applyMiddleware(thunk),
 );
 export const persistor = persistStore(store);

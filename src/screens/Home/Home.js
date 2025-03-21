@@ -2,7 +2,7 @@
 import { useTheme } from '@react-navigation/native';
 import React from 'react';
 import { Text, View } from 'react-native';
-/* import { Config } from 'react-native-config'; */
+import { Config } from 'react-native-config';
 import { useSelector } from 'react-redux';
 import { getUser } from '@/selectors/UserSelectors';
 import { styles } from '@/screens/Home/Home.styles';
@@ -18,7 +18,7 @@ export function Home() {
         Welcome {user?.username}
       </Text>
       <Text style={[typography.text, { color: colors.text }]}>
-        App variant: {/* Config.BUILD_VARIANT */}
+        App variant: {Config.BUILD_VARIANT}
       </Text>
     </View>
   );

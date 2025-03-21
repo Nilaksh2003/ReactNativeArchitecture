@@ -12,13 +12,13 @@ import { shadow } from '@/theme';
 export function Login() {
   const { colors } = useTheme();
   const dispatch = useDispatch();
-  const [username, setUsername] = useState('');
+  const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const errors = useSelector((state) => errorsSelector([TYPES.LOGIN], state), shallowEqual);
   const isLoading = useSelector((state) => isLoadingSelector([TYPES.LOGIN], state));
 
   const handleSubmit = () => {
-    dispatch(login(username, password));
+    dispatch(login(userName, password));
   };
 
   return (
@@ -28,9 +28,9 @@ export function Login() {
           autoCapitalize="none"
           accessibilityHint="Enter your username"
           accessibilityLabel="Username"
-          onChangeText={setUsername}
+          onChangeText={setUserName}
           placeholder="Username"
-          value={username}
+          value={userName}
         />
         <TextField
           secureTextEntry

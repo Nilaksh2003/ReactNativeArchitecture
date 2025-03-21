@@ -30,7 +30,7 @@ const clearStore = () => ({
 });
 
 export const login =
-  ({userName, password}) =>
+  (userName, password) =>
   async (dispatch) => {
     try {
       dispatch(loginRequest());
