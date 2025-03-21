@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
-export function App() {
+export default function App() {
   const handleStoreRehydration = () => {
     const {accessToken} = store.getState().user;
     if (accessToken) {
